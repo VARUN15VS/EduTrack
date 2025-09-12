@@ -6,7 +6,6 @@ import dotenv
 dotenv.load_dotenv()
 
 def get_db_connection():
-    """Fetch MySQL connection using environment variables."""
     return mysql.connector.connect(
         host=os.getenv("MYSQL_HOST", "localhost"),
         port=int(os.getenv("MYSQL_PORT", 3306)),
@@ -160,7 +159,7 @@ def main():
 
         cursor.close()
         cnx.close()
-        print("Database setup complete ✅")
+        print("Database setup completed.")
 
     except mysql.connector.Error as err:
         print(f"Error: {err}")
